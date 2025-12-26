@@ -1,3 +1,65 @@
+mintegral.com, 36926, DIRECT, 0aeed750c80d6423
+
+33across.com, 001Pg00000LoMyvIAF, RESELLER, bbea06d9c4d2853c
+
+admanmedia.com, 2072, RESELLER
+
+criteo.com, B-081657, RESELLER, 9fac4a4a87c2a44f
+
+meazy.co, 15510, RESELLER
+
+xe.works, 15511, RESELLER
+
+pubmatic.com, 162837, RESELLER, 5d62403b186f2ace
+
+pubmatic.com, 166238, RESELLER, 5d62403b186f2ace
+
+entravision.com, 1525, RESELLER
+
+display.io, 221372, RESELLER
+
+adingenious.com, 75075, RESELLER
+
+audiobranch.co, 256780, RESELLER
+
+auxoads.com, 12125, RESELLER
+
+admixer.net, 1046d8dc-f1a9-439d-a8a5-3401fda83729, RESELLER
+
+risecodes.com, 67e92bf7698942000140acce, RESELLER
+
+media.net, 8CUE65SNU, RESELLER
+
+freewheel.tv, 1138513-524565, RESELLER
+
+freewheel.tv, sg1258340, RESELLER
+
+supply.colossusssp.com, 907, RESELLER
+
+themediagrid.com, WS2D8N, RESELLER, 35d5010d7789b49d
+
+rubiconproject.com, 25692, RESELLER, 0bfd66d529a55807
+
+adagio.io, 1280, RESELLER
+
+adagio.io, 1581, RESELLER
+
+criteo.com, NC7LXT, RESELLER, 35d5010d7789b49d
+
+criteo.com, WS2D8N, RESELLER, 35d5010d7789b49d
+
+onlinemediasolutions.com, 43275, RESELLER, b3868b187e4b6402
+
+inmobi.com, 23d316d3d980453d8ea0dcf9caec4078, RESELLER, 83e75a7ae333ca9d
+
+criteo.com, TERO1F, RESELLER, 35d5010d7789b49d
+
+criteo.com, TVX1JK, RESELLER, 35d5010d7789b49d
+
+themediagrid.com, TERO1F, RESELLER, 35d5010d7789b49d
+
+themediagrid.com, TVX1JK, RESELLER, 35d5010d7789b49d
+
 OWNERDOMAIN=[yourdomain.com]
 ironsrc.com, [yourironSourcePublisherAccountID], Direct
 Remember to replace the OwnerDomain Line with your domain. 
