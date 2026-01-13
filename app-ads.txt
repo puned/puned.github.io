@@ -1,3 +1,5 @@
+google.com, pub-2912341234436825, DIRECT, f08c47fec0942fa0
+
 mintegral.com, 36926, DIRECT, 0aeed750c80d6423
 
 33across.com, 001Pg00000LoMyvIAF, RESELLER, bbea06d9c4d2853c
