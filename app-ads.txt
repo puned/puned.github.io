@@ -1,3 +1,4 @@
+facebook.com, 1532997777538443, RESELLER, c3e20eee3f780d68
 google.com, pub-2912341234436825, DIRECT, f08c47fec0942fa0
 
 mintegral.com, 36926, DIRECT, 0aeed750c80d6423
