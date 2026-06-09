@@ -1,3 +1,5 @@
+google.com, pub-7112055678212370, DIRECT, f08c47fec0942fa0
+google.com, pub-3803436775068007, DIRECT, f08c47fec0942fa0
 google.com, pub-7589128943023099, DIRECT, f08c47fec0942fa0
 cgnl.io, 7000, RESELLER
 cignal.io, 7000, RESELLER
