@@ -1,13 +1,612 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <title>新建HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#20232a">
+    <meta name="description" content="Amazing Logame 是云南乐游科技有限公司的移动游戏与隐私信息入口。">
+    <meta property="og:title" content="Amazing Logame">
+    <meta property="og:description" content="查看 Amazing Logame 的游戏信息、隐私说明和广告授权文件。">
+    <meta property="og:type" content="website">
+    <title>Amazing Logame | 云南乐游科技</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #20232a;
+            --muted: #5b6170;
+            --line: #d9dee7;
+            --paper: #ffffff;
+            --wash: #f5f7fb;
+            --coral: #ef6f61;
+            --green: #2f8f6f;
+            --gold: #f0bd4f;
+            --blue: #4b7bec;
+            --shadow: 0 18px 40px rgba(31, 41, 55, 0.10);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+            color: var(--ink);
+            background: var(--wash);
+            line-height: 1.65;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid rgba(75, 123, 236, 0.35);
+            outline-offset: 3px;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid rgba(217, 222, 231, 0.82);
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(16px);
+        }
+
+        .nav {
+            width: min(1120px, calc(100% - 32px));
+            min-height: 68px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .brand-mark {
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            border: 2px solid var(--ink);
+            border-radius: 8px;
+            background: var(--gold);
+            box-shadow: 5px 5px 0 var(--ink);
+            font-size: 0.88rem;
+            letter-spacing: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            padding: 8px 10px;
+            border-radius: 6px;
+        }
+
+        .nav-links a:hover {
+            color: var(--ink);
+            background: #eef2f8;
+        }
+
+        .hero {
+            border-bottom: 1px solid var(--line);
+            background:
+                linear-gradient(90deg, rgba(239, 111, 97, 0.10), transparent 28%),
+                linear-gradient(180deg, #ffffff 0%, #f5f7fb 100%);
+        }
+
+        .hero-inner {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 72px 0 52px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+            align-items: center;
+            gap: 56px;
+        }
+
+        .eyebrow {
+            margin: 0 0 14px;
+            color: var(--green);
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            max-width: 720px;
+            margin: 0;
+            font-size: clamp(2.55rem, 8vw, 5.75rem);
+            line-height: 0.96;
+            letter-spacing: 0;
+        }
+
+        .lead {
+            max-width: 620px;
+            margin: 24px 0 0;
+            color: var(--muted);
+            font-size: clamp(1rem, 2.3vw, 1.18rem);
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .button {
+            min-height: 46px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 0 18px;
+            border: 2px solid var(--ink);
+            border-radius: 8px;
+            font-weight: 800;
+            box-shadow: 4px 4px 0 var(--ink);
+            transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+        }
+
+        .button:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--ink);
+        }
+
+        .button.primary {
+            background: var(--coral);
+            color: #fff;
+        }
+
+        .button.secondary {
+            background: #fff;
+        }
+
+        .device {
+            width: min(100%, 420px);
+            margin-left: auto;
+            padding: 18px;
+            border: 3px solid var(--ink);
+            border-radius: 26px;
+            background: #1f242d;
+            box-shadow: var(--shadow);
+        }
+
+        .screen {
+            min-height: 520px;
+            padding: 18px;
+            border-radius: 18px;
+            background: #f9fbff;
+            overflow: hidden;
+        }
+
+        .screen-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 18px;
+            color: var(--muted);
+            font-size: 0.86rem;
+            font-weight: 700;
+        }
+
+        .level-card {
+            padding: 18px;
+            border: 2px solid var(--ink);
+            border-radius: 8px;
+            background: var(--gold);
+            box-shadow: 5px 5px 0 var(--ink);
+        }
+
+        .level-card strong {
+            display: block;
+            font-size: 1.25rem;
+            line-height: 1.25;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 22px 0;
+        }
+
+        .tile {
+            aspect-ratio: 1;
+            border: 2px solid var(--ink);
+            border-radius: 8px;
+            box-shadow: 3px 3px 0 var(--ink);
+        }
+
+        .tile:nth-child(3n + 1) {
+            background: var(--coral);
+        }
+
+        .tile:nth-child(3n + 2) {
+            background: var(--green);
+        }
+
+        .tile:nth-child(3n) {
+            background: var(--blue);
+        }
+
+        .screen-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .stat {
+            min-height: 86px;
+            padding: 12px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .stat span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        .stat strong {
+            display: block;
+            margin-top: 4px;
+            font-size: 1.3rem;
+        }
+
+        .section {
+            border-bottom: 1px solid var(--line);
+            background: #fff;
+        }
+
+        .section.alt {
+            background: var(--wash);
+        }
+
+        .section-inner {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 56px 0;
+        }
+
+        .section-heading {
+            display: grid;
+            grid-template-columns: minmax(0, 0.82fr) minmax(260px, 1fr);
+            gap: 44px;
+            align-items: start;
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            line-height: 1.08;
+            letter-spacing: 0;
+        }
+
+        .section-heading p,
+        .card p,
+        .notice p {
+            margin: 0;
+            color: var(--muted);
+            overflow-wrap: anywhere;
+        }
+
+        code {
+            padding: 2px 5px;
+            border-radius: 5px;
+            background: #eef2f8;
+            color: var(--ink);
+            font-family: "Cascadia Mono", "Consolas", monospace;
+            font-size: 0.92em;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            min-height: 178px;
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+            font-size: 1.08rem;
+        }
+
+        .tag {
+            width: fit-content;
+            margin-bottom: 16px;
+            padding: 5px 9px;
+            border-radius: 999px;
+            background: #eef2f8;
+            color: var(--muted);
+            font-size: 0.78rem;
+            font-weight: 800;
+        }
+
+        .notice {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 20px;
+            align-items: center;
+            padding: 24px;
+            border: 2px solid var(--ink);
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 5px 5px 0 var(--ink);
+        }
+
+        .notice h3 {
+            margin: 0 0 6px;
+            font-size: 1.22rem;
+        }
+
+        .site-footer {
+            background: var(--ink);
+            color: #fff;
+        }
+
+        .footer-inner {
+            width: min(1120px, calc(100% - 32px));
+            min-height: 104px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.95rem;
+        }
+
+        .footer-inner strong {
+            display: block;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 820px) {
+            .nav {
+                min-height: auto;
+                padding: 14px 0;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                width: 100%;
+                overflow-x: auto;
+                padding-bottom: 2px;
+            }
+
+            .hero-inner,
+            .section-heading {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .hero-inner {
+                padding: 48px 0 40px;
+            }
+
+            .device {
+                margin: 0;
+            }
+
+            .screen {
+                min-height: 420px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .notice {
+                grid-template-columns: 1fr;
+            }
+
+            .notice .button {
+                width: 100%;
+            }
+
+            .footer-inner {
+                padding: 28px 0;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 460px) {
+            .actions,
+            .button {
+                width: 100%;
+            }
+
+            .brand {
+                white-space: normal;
+            }
+
+            .screen {
+                min-height: 360px;
+                padding: 14px;
+            }
+
+            .screen-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>
-Amazing Logame
-</h1>
-    <p></p>
+    <header class="site-header">
+        <nav class="nav" aria-label="主导航">
+            <a class="brand" href="#top" aria-label="Amazing Logame 首页">
+                <span class="brand-mark">AL</span>
+                <span>Amazing Logame</span>
+            </a>
+            <div class="nav-links">
+                <a href="#games">游戏</a>
+                <a href="#privacy">隐私</a>
+                <a href="#ads">广告透明</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-inner">
+                <div>
+                    <p class="eyebrow">Mobile Games · Privacy · Ads</p>
+                    <h1 id="hero-title">Amazing Logame</h1>
+                    <p class="lead">
+                        我们专注于轻量、易上手的移动游戏体验。这里汇总游戏入口、隐私说明和广告授权文件，方便玩家、合作方和平台审核快速访问。
+                    </p>
+                    <div class="actions">
+                        <a class="button primary" href="#privacy">查看隐私说明</a>
+                        <a class="button secondary" href="app-ads.txt">打开 app-ads.txt</a>
+                    </div>
+                </div>
+
+                <div class="device" aria-label="游戏视觉示意">
+                    <div class="screen">
+                        <div class="screen-top">
+                            <span>Amazing Logame</span>
+                            <span>Ready</span>
+                        </div>
+                        <div class="level-card">
+                            <span>Daily Challenge</span>
+                            <strong>轻松开局，逐步进阶</strong>
+                        </div>
+                        <div class="board" aria-hidden="true">
+                            <span class="tile"></span>
+                            <span class="tile"></span>
+                            <span class="tile"></span>
+                            <span class="tile"></span>
+                            <span class="tile"></span>
+                            <span class="tile"></span>
+                            <span class="tile"></span>
+                            <span class="tile"></span>
+                            <span class="tile"></span>
+                            <span class="tile"></span>
+                            <span class="tile"></span>
+                            <span class="tile"></span>
+                        </div>
+                        <div class="screen-stats">
+                            <div class="stat">
+                                <span>Session</span>
+                                <strong>短局</strong>
+                            </div>
+                            <div class="stat">
+                                <span>Style</span>
+                                <strong>休闲</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="games" aria-labelledby="games-title">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <h2 id="games-title">为移动端设计的轻量游戏</h2>
+                    <p>
+                        页面保持简洁、加载快，并直接呈现玩家和平台最常用的信息入口。后续如需展示具体产品，可以在此处扩展游戏列表和商店链接。
+                    </p>
+                </div>
+                <div class="cards">
+                    <article class="card">
+                        <div class="tag">体验</div>
+                        <h3>短时间可完成</h3>
+                        <p>适合碎片化游玩，减少复杂说明，让玩家快速理解目标并开始挑战。</p>
+                    </article>
+                    <article class="card">
+                        <div class="tag">适配</div>
+                        <h3>移动端优先</h3>
+                        <p>首页布局对手机屏幕友好，按钮、导航和文本都能在小屏幕上稳定显示。</p>
+                    </article>
+                    <article class="card">
+                        <div class="tag">发布</div>
+                        <h3>审核信息集中</h3>
+                        <p>隐私说明和广告授权文件放在清晰位置，方便应用商店、广告平台和合作方核查。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section alt" id="privacy" aria-labelledby="privacy-title">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <h2 id="privacy-title">隐私说明</h2>
+                    <p>
+                        本站点关联的产品由云南乐游科技有限公司开发与发布。我们会按照合法、正当、必要原则处理产品运行、账号安全、广告服务及功能实现所需的信息。
+                    </p>
+                </div>
+                <div class="notice">
+                    <div>
+                        <h3>查看完整文本</h3>
+                        <p>完整隐私协议和广告相关原始记录保留在站点根目录的文本文件中，可直接打开查看。</p>
+                    </div>
+                    <a class="button primary" href="app-ads.txt">查看原始文件</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="ads" aria-labelledby="ads-title">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <h2 id="ads-title">广告透明</h2>
+                    <p>
+                        <code>app-ads.txt</code> 用于公开授权广告售卖方信息，帮助广告生态识别合法合作关系。平台或合作方可以通过固定地址访问该文件。
+                    </p>
+                </div>
+                <div class="notice">
+                    <div>
+                        <h3>文件地址</h3>
+                        <p>https://puned.github.io/app-ads.txt</p>
+                    </div>
+                    <a class="button secondary" href="app-ads.txt">打开文件</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <strong>Amazing Logame</strong>
+                <span>云南乐游科技有限公司</span>
+            </div>
+            <span>© 2026 Amazing Logame. All rights reserved.</span>
+        </div>
+    </footer>
 </body>
 </html>
