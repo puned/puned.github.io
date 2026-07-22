@@ -6,7 +6,7 @@
 隐私政策地址：https://puned.github.io/app-ads.txt
 服务条款地址：https://puned.github.io/ServiceTermsNew/
 
-一、运营主体、业务运营地点、用户地区与服务提供地点
+一、运营主体、业务运营地点、用户地区与服务提供地点 
 
 1.1 运营主体
 Bubble Shooter: CrazyPop 由云南乐游科技有限公司（以下简称“我们”或“公司”）开发、运营并提供相关服务。
