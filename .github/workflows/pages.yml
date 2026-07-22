@@ -30,6 +30,7 @@ jobs:
           mkdir -p _site
           cp index.html app-ads.txt README.md .nojekyll _site/
           cp -R ServiceTerms _site/ServiceTerms
+          cp -R ServiceTermsNew _site/ServiceTermsNew
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
