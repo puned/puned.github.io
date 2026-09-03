@@ -28,9 +28,7 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir -p _site
-          cp index.html app-ads.txt README.md .nojekyll _site/
-          cp -R ServiceTerms _site/ServiceTerms
-          cp -R ServiceTermsNew _site/ServiceTermsNew
+          rsync -a --exclude .git --exclude .github --exclude _site ./ _site/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
